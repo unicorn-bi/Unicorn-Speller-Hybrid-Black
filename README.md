@@ -10,8 +10,9 @@ Unicorn Speller uses the text-to-speech engines and voices that are supported by
 
 Select Speech Recognition from the operating system's control panel and click the Text to Speech item on the left to open the Speech Properties window. A voice must be listed under 'Voice selection' before it can be used with Unicorn Speller. 
 
-**Attention**:<br><br>
-A voice that is not compatible with the currently used operating system version will not work and can cause the program to crash or work improperly!
+
+| <img src="./img/IconAttention.png" alt="drawing" width="200"/>| **Attention:** <br/> A voice that is not compatible with the currently used operating system version will not work and can cause the program to crash or work improperly!|
+|-|-|
 
 ## Files on your computer
 **Unicorn Speller files** – are stored under (assuming that the default path setting is used):
@@ -131,31 +132,90 @@ The main window consists of 5 main elements:
     - The **Calibration items** panel displays the selected calibration items during calibration or in copy-spelling mode. When no calibration items are selected, this panel is grayed out. With the **Backspace** button, items can be removed from the calibration items panel.
     - The **Item selections** panel displays previously selected items. In copy-spelling mode, all selected items are displayed. In free-spelling mode, only the last three selected items are displayed.
 4. The **completion suggestions** panel (between the **Written text** box and the **board** area) displays probable word completion suggestions based on the currently written text. A completion suggestion can be selected and inserted into the **Written text** by selection of one of the corresponding up-arrow items right below in the first row of the board.
-    - The **completion suggestions** panel is not shown if word prediction is disabled. In this case, selection of an up-arrow item would have no effect. See sections [Word Prediction](#Wodd) and [Configuring item: Select completion suggestion]() for details on word prediction.
+    - The **completion suggestions** panel is not shown if word prediction is disabled. In this case, selection of an up-arrow item would have no effect. See sections [Word Prediction](#word-prediction) and [Configuring item: Select completion suggestion](#configuring-item-select-completion-suggestion) for details on word prediction.
 5.	The **board** area in the middle of the main window displays the set of possible selectable items. Double-clicking on an item in standby mode will add it to the calibration items panel.
 
-**NOTE:**<br>
-You can resize the main window according to your preferences and needs.
+| <img src="./img/IconZ.png" alt="drawing" width="50"/>| **Note:** <br/> You can resize the main window according to your preferences and needs.|
+|-|-|
 
-**NOTE:**<br>
-All user specific settings (such as connection, timing,…) and used files (such as calibration file, board configuration file,…) of the application will be stored to a default configuration file when Unicorn Speller is closed. This default configuration is used next time you start Unicorn Speller.
+| <img src="./img/IconZ.png" alt="drawing" width="200"/>| **Note:** <br/> All user specific settings (such as connection, timing,…) and used files (such as calibration file, board configuration file,…) of the application will be stored to a default configuration file when Unicorn Speller is closed. This default configuration is used next time you start Unicorn Speller.|
+|-|-|
+
 
 ### Status Indicators
 The status bar contains four status indicators:
-<p align="center">
-<img src="./img/Img4.png" alt="drawing" width="800"/><br/>
-</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Status indicator</th>
+            <th>Possible states</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td rowspan="4">Connection</td>
+            <td>Data acquisition running</td>
+            <td>The application is connected to the Unicorn Brain Interface and receives EEG data.</td>
+        </tr>
+        <tr>
+            <td>Data acquisition stopped</td>
+            <td>The application can’t receive data from a Unicorn Brain Interface. Please ensure that the Unicorn Brain Interface is turned on and on standby, then check connection settings in menu <strong>→ Connection...</strong></td>
+        </tr>
+        <tr>
+            <td>Connecting to device...</td>
+            <td>The application tries to establish a connection to the selected Unicorn Brain Interface. To change the Unicorn Brain Interface, go to menu <strong>→ Connection…</strong></td>
+        </tr>
+        <tr>
+            <td>Not connected</td>
+            <td>The application is not connected to a Unicorn Brain Interface and can’t receive data. Please ensure that the Unicorn Brain Interface is turned on and on standby, then check connection settings in menu <strong>→ Connection…</strong></td>
+        </tr>
+        <tr>
+            <td rowspan="2">Signal quality</td>
+            <td>Good signal quality</td>
+            <td>The specified signal quality criteria are met. Here the signal quality is rated to be good.</td>
+        </tr>
+        <tr>
+            <td>Poor signal quality</td>
+            <td>The specified signal quality criteria are not met for at least one channel (the name of the first channel that doesn’t meet the criteria is displayed directly below, and the name of all channels that do not meet the criteria is displayed when the mouse hovers over). Signal quality is said to be poor. You can inspect the signals in the data viewer (<img src="./img/IconDataViewer.png" alt="drawing" width="15"/>).</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Calibration state</td>
+            <td>Calibrated</td>
+            <td>The last used calibration could be loaded and is ready to operate. <br/><br/> <strong>ATTENTION:</strong><br/> A calibration file that could be loaded but wasn’t created with the currently used number of channels will not work even if the status indicator says it is okay.</td>
+        </tr>
+        <tr>
+            <td>Not calibrated</td>
+            <td>Unicorn Speller must be calibrated, or an existing calibration file must be selected (menu <strong>→ Selection method…</strong>)</td>
+        </tr>
+        <tr>
+            <td rowspan="3">Network output state</td>
+            <td>Network output enabled</td>
+            <td>Network output is enabled and no error occurred on sending the most recently selected item over the network.</td>
+        </tr>
+        <tr>
+            <td>Couldn't send item over network</td>
+            <td>If network output is enabled (menu <strong>→ Network output…</strong>) and an item couldn’t be sent on selection, this status message will be presented. Please ensure that your firewall allows outgoing connections for Unicorn Speller on the specified port.</td>
+        </tr>
+        <tr>
+            <td>Network output disabled</td>
+            <td>Network output is disabled.</td>
+        </tr>
+    </tbody>
+</table>
+
 
 ## Establish a connection to the Unicorn Brain Interface
 ### Connection via Bluetooth
 Before you can establish a Bluetooth connection between your Unicorn and your PC for the first time, you first have to pair your Unicorn with your PC. Unicorn Speller can connect to the Unicorn once it is paired with the PC, turned on and in standby mode.
 
-Open the **Data Acquisition Configuration** dialog to configure the settings of the connection by selecting <img src="./img/Icon.png" alt="drawing" width="15"/> ->  Connection… from the menu bar as illustrated.
+Open the **Data Acquisition Configuration** dialog to configure the settings of the connection by selecting **<img src="./img/Icon.png" alt="drawing" width="15"/> →  Connection…** from the menu bar as illustrated.
 <p align="center">
 <img src="./img/Img5.png" alt="drawing" width="300"/><br/>
 </p>
 
-Select <img src="./img/Icon.png" alt="drawing" width="15"/> -> Connection… from the menu to edit connection settings of Unicorn Speller.
+Select **→ Connection**… from the menu to edit connection settings of Unicorn Speller.
 
 The **Data Acquisition Configuration** dialog will open as shown below.
 <p align="center">
@@ -164,8 +224,8 @@ The **Data Acquisition Configuration** dialog will open as shown below.
 
 If your Unicorn Brain Interface is not listed in the drop-down menu but it is connected to your PC, click the **Find connected devices** button. Unicorn Speller now searches for paired Unicorn Brain Interfaces and lists the serial numbers of the found devices in the drop-down list afterwards. While the application tries to establish a connection to the first found Unicorn Brain Interface, the **Connection State** indicator changes its state to Connecting…. This may take several seconds.
 
-**Attention**: 
-- If the **Data Acquisition Configuration** dialog states that an unrecommended Bluetooth adapter or no Bluetooth adapter is detected, please connect the recommended Bluetooth adapter that was shipped together with your Unicorn and disconnect all other Bluetooth adapters. Also, disable a possibly built-in Bluetooth adapter. Otherwise, the Unicorn might not work properly. Search again for connected Unicorns when the recommended Bluetooth adapter is connected.
+| <img src="./img/IconAttention.png" alt="drawing" width="200"/>| **Attention:** <br/> If the **Data Acquisition Configuration** dialog states that an unrecommended Bluetooth adapter or no Bluetooth adapter is detected, please connect the recommended Bluetooth adapter that was shipped together with your Unicorn and disconnect all other Bluetooth adapters. Also, disable a possibly built-in Bluetooth adapter. Otherwise, the Unicorn might not work properly. Search again for connected Unicorns when the recommended Bluetooth adapter is connected.|
+|-|-|
 
 You can select a different Unicorn Brain Interface by selecting the desired serial number from the drop-down list. When a connection could be established, the **Connection State** indicator changes its state to Device found and reads the configuration of the Unicorn Brain Interface (see **Error! Reference source not found**.).
 
@@ -173,34 +233,44 @@ You can select a different Unicorn Brain Interface by selecting the desired seri
 <img src="./img/Img7.png" alt="drawing" width="600"/><br/>
 </p>
 
-**NOTE**:
-1. The dialog displays the filter settings of the hardware (i.e. the Unicorn Brain Interface) only. Unicorn Speller additionally uses software filters for signal processing, but their settings are not displayed in the **Data Acquisition Configuration** dialog.
-2. When a serial number is selected in the drop-down list but the **Connection State** keeps indicating that the Unicorn Brain Interface is not found, ensure that the Unicorn Brain Interface is turned on and paired.
+| <img src="./img/IconZ.png" alt="drawing" width="200"/>| **Note:** <br/> The dialog displays the filter settings of the hardware (i.e. the Unicorn Brain Interface) only. Unicorn Speller additionally uses software filters for signal processing, but their settings are not displayed in the **Data Acquisition Configuration** dialog.|
+|-|-|
+
+| <img src="./img/IconZ.png" alt="drawing" width="200"/>| **Note:** <br/> When a serial number is selected in the drop-down list but the **Connection State** keeps indicating that the Unicorn Brain Interface is not found, ensure that the Unicorn Brain Interface is turned on and paired.|
+|-|-|
 
 Click **OK** to establish a connection with the selected Unicorn, configure it with the chosen options and start data acquisition.
 
 ### Loss of Connection
 When Unicorn Speller is currently not connected to an Unicorn Brain Interface or has lost its Bluetooth connection, it periodically tries to reconnect to the Unicorn Brain Interface every few seconds.
 
+### No connection between Unicorn Speller and Unicorn Brain Interface
+In certain cases, Unicorn Speller either can’t establish a connection with the Unicorn Brain Interface or an existing connection gets lost. This could result if the battery is too low, the Unicorn Brain Interface is turned 
+off or a subject leaves the Bluetooth transmission range.
+
+When Unicorn Speller is not able to reconnect to the Unicorn Brain Interface, please turn off the Unicorn Brain Interface and turn it on again afterwards. The Unicorn Brain Interface will return to standby mode and 
+Unicorn Speller can reconnect to the Unicorn Brain Interface.
+
 ## Check Signal Quality
 Before you start working with Unicorn Speller, you should ensure that the incoming signals are high quality, so that Unicorn Speller will operate under optimal conditions. You can either investigate the incoming signals using the built-in data viewer or you can obtain information about the signal quality of each channel by defining threshold values of the integrated quality criteria. Both options are described in this section.
 
 ### THe Data Viewer
-Open the Data Viewer by selecting <img src="./img/Icon.png" alt="drawing" width="15"/> from the menu bar. The data viewer will open.
+Open the Data Viewer by selecting <img src="./img/IconDataViewer.png" alt="drawing" width="15"/> from the menu bar. The data viewer will open.
 
 <p align="center">
 <img src="./img/Icon2.png" alt="drawing" width="50"/><br/>
 </p>
-Select <img src="./img/Icon.png" alt="drawing" width="15"/> from the menu bar to open the data viewer window.
+Select <img src="./img/IconDataViewer.png" alt="drawing" width="15"/> from the menu bar to open the data viewer window.
 
 <p align="center">
 <img src="./img/Img8.png" alt="drawing" width="800"/><br/>
 </p>
 
-The data viewer shows the signal of each channel in a regular scaling range between -50 µV and +50 µV (µV = microvolts) in a separate color for a period of 10 seconds. Data are overwritten from left to right. If signal amplitudes exceed the scaling range, the signals will overlap the area of channels below or above. The signals will only be truncated at the top and the bottom of the whole drawing area, respectively. Corresponding channel numbers and signals are plotted in the same color.
+The data viewer shows the signal of each channel in a regular scaling range between ```-50 µV``` and ```+50 µV``` (µV = ```microvolts```) in a separate color for a period of ```10``` seconds. Data are overwritten from left to right. If signal amplitudes exceed the scaling range, the signals will overlap the area of channels below or above. The signals will only be truncated at the top and the bottom of the whole drawing area, respectively. Corresponding channel numbers and signals are plotted in the same color.
 
-**NOTE**:
-- Spontaneous EEG signal amplitudes are typically within the range of ±50 µV (using monopolar derivation techniques). If the signals are much smaller or much bigger, please check your electrode settings.
+| <img src="./img/IconZ.png" alt="drawing" width="200"/>| **Note:** <br/> Spontaneous EEG signal amplitudes are typically within the range of ```±50 µV``` (using monopolar derivation techniques). If the signals are much smaller or much bigger, please check your electrode settings.|
+|-|-|
+
 
 You can quickly check the signal quality by advising the user to perform some simple activities listed in the following steps:
 1. The quiescent EEG of a person who is not moving should look like in the following pictures. As you can see, all channels look quite similar and range within ±50 µV.
@@ -231,28 +301,27 @@ For each channel, the actual built-in signal quality criteria are evaluated sepa
 
 There are two built-in signal quality criteria that will be checked: the bandpower mean difference (BPMD) and the standard deviation (SD).
 -  **The standard deviation criterion**: 
-    - If the standard deviation of the 2 last seconds of the signal of the corresponding channel is within 7 µV and 50 µV, the signal quality is assumed to be Good. If the standard deviation lies outside this range, the signal quality is assumed to be Poor.
+    - If the standard deviation of the 2 last seconds of the signal of the corresponding channel is within 7 µV and 50 µV, the signal quality is assumed to be ```Good```. If the standard deviation lies outside this range, the signal quality is assumed to be ```Poor```.
 - **The bandpower mean difference criterion**: 
-    - The signal processing chain of Unicorn Speller applies notch filters that block frequencies around 50 Hz and 60 Hz on the incoming signal from the Unicorn Brain Interface and a bandpass filter with cutoff frequencies of 0.1 Hz and 30 Hz afterwards. First, the mean signal amplitude of the 50 Hz and 60 Hz frequency component of the signal (within a band of ±2 Hz) after the notch filtering is calculated. Then the mean signal amplitude within the frequency range of 0.1 – 30 Hz after the bandpass filtering is calculated. If the difference between the calculated mean value after bandpass filtering and the calculated mean value after notch filtering (i.e. bandpass minus notch) is greater than 0.1 µV, the signal quality is said to be Good. Otherwise, the signal quality is said to be Poor.
+    - The signal processing chain of Unicorn Speller applies notch filters that block frequencies around 50 Hz and 60 Hz on the incoming signal from the Unicorn Brain Interface and a bandpass filter with cutoff frequencies of 0.1 Hz and 30 Hz afterwards. First, the mean signal amplitude of the 50 Hz and 60 Hz frequency component of the signal (within a band of ±2 Hz) after the notch filtering is calculated. Then the mean signal amplitude within the frequency range of 0.1 – 30 Hz after the bandpass filtering is calculated. If the difference between the calculated mean value after bandpass filtering and the calculated mean value after notch filtering (i.e. bandpass minus notch) is greater than 0.1 µV, the signal quality is said to be ```Good```. Otherwise, the signal quality is said to be ```Poor```.
 
     ## Calibrate Unicorn Speller
     Unicorn Speller must be calibrated before its first use. During calibration, Unicorn Speller learns the difference between the user’s typical EEG signals after a calibration item flashes and after all other (non-calibration) items flash. In particular, calibration creates a decision boundary that best separates the recorded signals for calibration items from all other non-calibration items. For a new signal (that comes after calibration), Unicorn Speller then decides whether this signal better matches the recorded signals for a calibration or a non-calibration item from the previous calibration session.
 
     Run through the following steps to successfully calibrate Unicorn Speller:
 
-    **NOTE**:
-    - Read through all the steps before actually executing them.
+    | <img src="./img/IconZ.png" alt="drawing" width="50"/>| **Note:** <br/> Read through all the steps before actually executing them.|
+    |-|-|
 
+    1.	Ensure that the Unicorn Hybrid EEG Electrodes are mounted correctly, the Unicorn Brain Interface runs, Unicorn Speller is connected to the Unicorn Brain Interface and receives data from it (status indicator must say that data acquisition is running) and the signals are of a good quality. Also ensure that Unicorn Speller is in standby mode, i.e. flashing must be stopped (<img src="./img/IconStop1.png" alt="drawing" width="15"/>).
 
-    1.	Ensure that the Unicorn Hybrid EEG Electrodes are mounted correctly, the Unicorn Brain Interface runs, Unicorn Speller is connected to the Unicorn Brain Interface and receives data from it (status indicator must say that data acquisition is running) and the signals are of a good quality. Also ensure that Unicorn Speller is in standby mode, i.e. flashing must be stopped (M).
-
-    2. Add a sequence of items to the calibration items panel by double-clicking the desired items on the board. This is the sequence that the user must sequentially count during calibration. For a reasonable calibration, at least 4 calibration items are recommended. In the figure below, the sequence GTEC has been selected as a calibration item sequence.
+    2. Add a sequence of items to the calibration items panel by double-clicking the desired items on the board. This is the sequence that the user must sequentially count during calibration. For a reasonable calibration, at least 4 calibration items are recommended. In the figure below, the sequence ```GTEC``` has been selected as a calibration item sequence.
 
 <p align="center">
 <img src="./img/Img12.png" alt="drawing" width="800"/><br/>
 </p>
 
-3.	Adjust the settings for timing (see chapter 21.14.1) to your needs. Note that these settings are strongly user-dependent, so you have to determine the best setting (where the resulting speed and accuracy deliver best results) empirically.
+3.	Adjust the settings for timing (see chapter [Overall COnfiguration of the board adn timing](#overall-configuration-of-the-board-and-timing)) to your needs. Note that these settings are strongly user-dependent, so you have to determine the best setting (where the resulting speed and accuracy deliver best results) empirically.
 
 4.	At the beginning, recommended settings are:
     - for single character mode: **Flash Time** = 60ms, **Dark Time** = 10ms
@@ -271,26 +340,27 @@ Click the **Calibrate** button. The **Calibration Settings** dialog opens. Selec
 
 6.	When you are ready, click the **Start** button.
 
-7. **NOTE**:
-    - It is extremely important that the user has a completely relaxed posture while sitting or lying to obtain good signal quality, and hence good calibration. Any kind of muscle activity can cause artifacts in the EEG signal and substantially impair data quality and effective calibration.
+7. 
+    | <img src="./img/IconZ.png" alt="drawing" width="200"/>| **Note:** <br/> It is extremely important that the user has a completely relaxed posture while sitting or lying to obtain good signal quality, and hence good calibration. Any kind of muscle activity can cause artifacts in the EEG signal and substantially impair data quality and effective calibration.|
+    |-|-|
 
-    Now, ask the user to focus on the current calibration item and get ready to count it. The current calibration item for the following flashing session will be highlighted for the time specified in the **Wait time** field in the **Flashing Settings** dialog (see section 21.12). Then the flashing starts and the previously specified number of flashes will be executed for the current calibration item.
+    Now, ask the user to focus on the current calibration item and get ready to count it. The current calibration item for the following flashing session will be highlighted for the time specified in the **Wait time** field in the **Flashing Settings** dialog (see section [Specify the setting for flashing](#specify-the-settings-for-flashing)). Then the flashing starts and the previously specified number of flashes will be executed for the current calibration item.
 
-
-    **NOTE**:
-    - Each time the current calibration item flashes on the board, the user silently count it to enhance the P300 complex in the brain signals. This is a common task to help users pay attention to each flash. The counting isn’t necessary. Hence, it doesn’t matter if the user loses the count or miscounts. You can even try it without counting.
+    | <img src="./img/IconZ.png" alt="drawing" width="200"/>| **Note:** <br/> Each time the current calibration item flashes on the board, the user silently count it to enhance the P300 complex in the brain signals. This is a common task to help users pay attention to each flash. The counting isn’t necessary. Hence, it doesn’t matter if the user loses the count or miscounts. You can even try it without counting.|
+    |-|-|
 
     After the specified number of flashes has been completed for the current calibration item, the next calibration item will be highlighted for the **Wait time** and the procedure repeats for that calibration item.
 
     The procedure will be repeated until all calibration items have been completed this way.
 
-    Calibration can be cancelled any time by clicking **M** in the menu bar. In this case, the current flash cycle will be completed and the process immediately proceeds to step 8. Please note that only the executed flashes will be considered for calibration.
+    Calibration can be cancelled any time by clicking <img src="./img/IconStop1.png" alt="drawing" width="15"/>
+ in the menu bar. In this case, the current flash cycle will be completed and the process immediately proceeds to step 8. Please note that only the executed flashes will be considered for calibration.
 
 8. After the last flash cycle for the last calibration item in the calibration items panel has been completed or calibration has been stopped by the user, the **Save Calibration Set** dialog will appear.
 
     Specify filename (and optionally a path) under which the calibration file should be saved to on the PC. The default filename includes a timestamp of when the calibration was performed. You can use the **…** button to browse through your file system. If just the filename without a path is specified, the calibration will be stored to the default calibration folder of Unicorn Speller see section [Files On Your Computer](#files-on-your-computer)
 
-    An existing calibration that has been used until now will not be used anymore, but the calibration file will be kept if you want to use it again later see section [Specify The Settings For Item Selection]().
+    An existing calibration that has been used until now will not be used anymore, but the calibration file will be kept if you want to use it again later see section [Specify The Settings For Item Selection](#specify-the-settings-for-item-selection).
 
     To cancel calibration and discard the recorded data, click the **Cancel** button. In this case, the recorded calibration data will be deleted.
     
@@ -305,10 +375,10 @@ Click the **Calibrate** button. The **Calibration Settings** dialog opens. Selec
 ## Write with Unicorn Speller
 To use Unicorn Speller with an existing calibration, run through the following steps:
 
-1. Ensure that the Unicorn Hybrid EEG Electrodes are mounted correctly, the Unicorn Brain Interface runs, Unicorn Speller is connected to the Unicorn Brain Interface and receives data from it (status indicator must say that data acquisition is running) and the signals are high quality. Also, ensure that Unicorn Speller is in standby mode, i.e., flashing must be stopped (menu **M**).
+1. Ensure that the Unicorn Hybrid EEG Electrodes are mounted correctly, the Unicorn Brain Interface runs, Unicorn Speller is connected to the Unicorn Brain Interface and receives data from it (status indicator must say that data acquisition is running) and the signals are high quality. Also, ensure that Unicorn Speller is in standby mode, i.e., flashing must be stopped (menu <img src="./img/IconStop1.png" alt="drawing" width="15"/>).
 2. Ensure that Unicorn Speller is calibrated (see section [Calibrate Unicorn Speller](#calibrate-unicorn-speller)). 
 
-3. If your chosen selection method requires parameters that are not configured yet, please configure them first (see section [Specify the Settings for item selection]() and following subsections).
+3. If your chosen selection method requires parameters that are not configured yet, please configure them first (see section [Specify the Settings for item selection](#specify-the-settings-for-item-selection) and following subsections).
 
 4. Now you have the choice to run Unicorn Speller in free-spelling mode (which is the usual case) or in copy-spelling mode (e.g. for testing).
     - To run Unicorn Speller in copy-spelling mode, select the desired calibration items first by adding them to the calibration items panel by double-clicking them in the board.
@@ -322,21 +392,21 @@ To use Unicorn Speller with an existing calibration, run through the following s
     - approximately 50cm for a 19” screen
     - approximately 30cm for a 10” screen
 
-6. Select **K** from the menu bar to start the flashing. The flashing will not start if data acquisition is not running or Unicorn Speller is not calibrated.
+6. Select <img src="./img/IconPlay1.png" alt="drawing" width="15"/> from the menu bar to start the flashing. The flashing will not start if data acquisition is not running or Unicorn Speller is not calibrated.
     <p align="center"><img src="./img/IconPlay.png" alt="drawing" width="80"/><br/></p>
     
-    As during calibration, the user is advised again to focus on the current item (whichever the user wants to write in free-spelling mode). In copy-spelling mode, the current item for the following flashing session will be highlighted for the time specified in the **Wait time** field of the **Flashing Settings** dialog (see section [Specify the settings for flashing]()).
+    As during calibration, the user is advised again to focus on the current item (whichever the user wants to write in free-spelling mode). In copy-spelling mode, the current item for the following flashing session will be highlighted for the time specified in the **Wait time** field of the **Flashing Settings** dialog (see section [Specify the settings for flashing](#specify-the-settings-for-flashing)).
     
-    Then, the flashing starts. Depending on the chosen selection method (see section [Specify the settings for item selection]() and following subsections), several flash cycles are executed until Unicorn Speller makes a decision and selects an item (if it is able to).
+    Then, the flashing starts. Depending on the chosen selection method (see section [Specify the settings for item selection](#specify-the-settings-for-item-selection) and following subsections), several flash cycles are executed until Unicorn Speller makes a decision and selects an item (if it is able to).
     
     | <img src="./img/IconZ.png" alt="drawing" width="200"/>| **Note:** <br/> Each time the current calibration item flashes on the board, the user silently count it to enhance the P300 complex in the brain signals. This is a common task to help users pay attention to each flash. The counting isn’t necessary. Hence, it doesn’t matter if the user loses the count or miscounts. You can even try it without counting.|
     |-|-|
     
-    Each time an item has been selected, it will appear larger on the screen for the duration specified by **Wait time** (see section [Specify the settings for flashing]()). If double selection is necessary for that item and this item is selected the first time, it will be highlighted with the specified color in the board (see sections [Overall Configuration of the board and timing](), [Editing the content of the board]() and [Items with specially linked actions in the StandardBoard.ibc and StandardFaceBoard.ibc file]()) and has to be selected again directly after this one. If the item is already preselected and selected a second time or if double selection is not necessary, a possibly linked action is executed (see section [Items with specially linked actions in the StandardBoard.ibc and StandardFaceBoard.ibc file]()) and the selected item is sent over the network, if enabled (see section [Configuring network output]()). If word prediction is enabled, the completion suggestion panel is updated with new completion suggestions based on the current content in the Written text box in addition (see section [Word Prediction]()).
+    Each time an item has been selected, it will appear larger on the screen for the duration specified by **Wait time** (see section [Specify the settings for flashing](#specify-the-settings-for-flashing)). If double selection is necessary for that item and this item is selected the first time, it will be highlighted with the specified color in the board (see sections [Overall Configuration of the board and timing](#overall-configuration-of-the-board-and-timing), [Editing the content of the board](#editing-the-content-of-the-board) and [Items with specially linked actions in the StandardBoard.ibc and StandardFaceBoard.ibc file](#items-with-specially-linked-actions-in-the-standardboardibc-and-standardfaceboardibc-file)) and has to be selected again directly after this one. If the item is already preselected and selected a second time or if double selection is not necessary, a possibly linked action is executed (see section [Items with specially linked actions in the StandardBoard.ibc and StandardFaceBoard.ibc file](#items-with-specially-linked-actions-in-the-standardboardibc-and-standardfaceboardibc-file)) and the selected item is sent over the network, if enabled (see section [Configuring network output](#configuring-network-output)). If word prediction is enabled, the completion suggestion panel is updated with new completion suggestions based on the current content in the Written text box in addition (see section [Word Prediction](#word-prediction)).
     
     After the **Wait time** has elapsed, the first flash cycle for the next calibration item begins immediately.
 
-7.	To stop the flashing, click the  button from the menu bar.
+7.	To stop the flashing, click the <img src="./img/IconStop1.png" alt="drawing" width="15"> button from the menu bar.
 <p align="center"><img src="./img/IconStop.png" alt="drawing" width="80"/><br/></p>
 
 8.	To close Unicorn Speller, click the close button at the top-right corner.
@@ -350,19 +420,19 @@ The predefined standard boards (files ```StandardBoard.ibc``` and ```StandardFac
 <img src="./img/Img15.png" alt="drawing" width="800"/><br/>
 </p>
 
-The standard board uses **Flash Image** and **Dark Image** for its items instead of **Displayed Text** (see section [Editing the content of the board]()). Flashing is realized by displaying the item image with inversed color. Items with characters (0…9, A…Z, enter, space, comma, dot, colon, exclamation mark and question mark) have set their **Output Text** field to the corresponding character such that they write this character to the **Written text** box on selection.
+The standard board uses **Flash Image** and **Dark Image** for its items instead of **Displayed Text** (see section [Editing the content of the board](#editing-the-content-of-the-board)). Flashing is realized by displaying the item image with inversed color. Items with characters (0…9, A…Z, enter, space, comma, dot, colon, exclamation mark and question mark) have set their **Output Text** field to the corresponding character such that they write this character to the **Written text** box on selection.
 
-The following items have special functions (for some of the items, double selection is necessary before the action will be executed; see [Editing the content of the board]()):
+The following items have special functions (for some of the items, double selection is necessary before the action will be executed; see [Editing the content of the board](#editing-the-content-of-the-board)):
 
 |Item|Caption|Double selection necessary|Action on selection|
 |-|-|-|-|
-|<img src="./img/Icon3.png" alt="drawing" width="100"/>|Select completion suggestion|No|Selects the completion suggestion displayed in the corresponding slot of the completion suggestion panel right above the item if word prediction is enabled and completes the currently written word in the **Written text** box with the selected completion suggestion. <br/><br/> If word prediction is disabled or the corresponding slot does not show a completion suggestion, a selection of this item will have no effect. <br/><br/> See section [Configuring item: Select completion suggestion]() for details on word prediction.|
+|<img src="./img/Icon3.png" alt="drawing" width="100"/>|Select completion suggestion|No|Selects the completion suggestion displayed in the corresponding slot of the completion suggestion panel right above the item if word prediction is enabled and completes the currently written word in the **Written text** box with the selected completion suggestion. <br/><br/> If word prediction is disabled or the corresponding slot does not show a completion suggestion, a selection of this item will have no effect. <br/><br/> See section [Configuring item: Select completion suggestion](#configuring-item-select-completion-suggestion) for details on word prediction.|
 |<img src="./img/Icon4.png" alt="drawing" width="100"/>|Backspace|No|Deletes the last written item from the **Written text** box. <br/><br/> If word prediction is enabled and backspace is selected right after a completion suggestion has been selected, the written text will be reverted to its state before the completion suggestion was inserted.|
 |<img src="./img/Icon5.png" alt="drawing" width="100"/>|Clear all|Yes|Clears the whole **Written text** box.|
 |<img src="./img/Icon6.png" alt="drawing" width="100"/>|Alarm|No|Plays an alarm sound for two seconds.|
 |<img src="./img/Icon7.png" alt="drawing" width="100"/>|Copy to email|Yes|Opens a new email using the configured standard email client (configurable via the operating system)|
-|<img src="./img/Icon8.png" alt="drawing" width="100"/>|Save|Yes|Saves the current content of the **Written text** box to an ASCII text file. The name of the text file is prespecified and follows the format below: <br/> <br/>```UnicornSpeller_Document yyyyMMdd_hhmmss.txt``` <br/> <br/>```yyyy``` are four digits representing the year, ```MM``` two digits representing the month, ```dd``` two digits representing the day, ```hh``` two digits for the hour in a 24-hour clock, mm two digits for the minutes and ```ss``` two digits for the seconds of the date of saving. <br/> <br/>See section [CONFIGURING ITEM: SAVE]() for details on configuring the storage directory.|
-|<img src="./img/Icon9.png" alt="drawing" width="100"/>|Speech output|Yes|Performs text-to-speech output of the whole text in the **Written text** box with the current settings. See section [CONFIGURING ITEM: SPEECH OUTPUT]() for details on configuring the text-to-speech output.|
+|<img src="./img/Icon8.png" alt="drawing" width="100"/>|Save|Yes|Saves the current content of the **Written text** box to an ASCII text file. The name of the text file is prespecified and follows the format below: <br/> <br/>```UnicornSpeller_Document yyyyMMdd_hhmmss.txt``` <br/> <br/>```yyyy``` are four digits representing the year, ```MM``` two digits representing the month, ```dd``` two digits representing the day, ```hh``` two digits for the hour in a 24-hour clock, mm two digits for the minutes and ```ss``` two digits for the seconds of the date of saving. <br/> <br/>See section [CONFIGURING ITEM: SAVE](#configuring-item-save) for details on configuring the storage directory.|
+|<img src="./img/Icon9.png" alt="drawing" width="100"/>|Speech output|Yes|Performs text-to-speech output of the whole text in the **Written text** box with the current settings. See section [CONFIGURING ITEM: SPEECH OUTPUT](#configuring-item-speech-output) for details on configuring the text-to-speech output.|
 |<img src="./img/Icon10.png" alt="drawing" width="100"/>|Print output|Yes|Sends the whole Written text box to the currently set default printer (configurable via the operating system).|
 
 ### Configuring item: Select completion suggestion
@@ -370,7 +440,7 @@ The **Select completion suggestion** items in the first row are part of the word
 
 If the **Backspace** item is selected right after a **Select completion suggestion** item, the completion will be undone. Otherwise, the **Backspace** item deletes the last written item.
 
-See section [Word prediction]() for details on the configuration of the word prediction feature.
+See section [Word prediction](#word-prediction) for details on the configuration of the word prediction feature.
 
 ### Configuring item: Save
 When the **Save** item has been selected twice (as it is necessary because of double selection), the whole **Written text** will be saved to an ASCII text file.
@@ -398,10 +468,10 @@ In the **Output Path** text field, set the directory to store the text files cre
 ### Configuring item: Speech Output
 When the item **Speech output** has been selected twice (as it is necessary because of double selection) the whole **Written text** will be read aloud by the operating system’s text-to-speech engine. 
 
-| <img src="./img/IconZ.png" alt="drawing" width="200"/>| **Note:** <br/> For requirements to perform text-to-speech output and installing additional voices and languages, see section [Requirments For Text-to-speech Output]().|
+| <img src="./img/IconZ.png" alt="drawing" width="200"/>| **Note:** <br/> For requirements to perform text-to-speech output and installing additional voices and languages, see section [Requirments For Text-to-speech Output](#requirements-for-test-to-speech-output).|
 |-|-|
 
-To select a specific voice and language and the speed of reading, open the **Speech Output Settings** dialog by selecting ```<-``` ```->``` **Speech output…** from the menu bar.
+To select a specific voice and language and the speed of reading, open the **Speech Output Settings** dialog by selecting **→ Speech output…** from the menu bar.
 <p align="center">
 <img src="./img/Img18.png" alt="drawing" width="250"/><br/>
 </p>
@@ -412,10 +482,10 @@ The Speech Output Settings dialog allows selection of the voice to use, adjustme
 
 The drop-down list in the **Voice Selection** group lists all currently installed voices for the operating system’s text-to-speech engine and lets you select the voice to use. By clicking the **Preview** button, you can listen to a specified preview text read by the selected voice with the current settings. Ensure that your speakers are turned on and the volume is high enough.
 
-If you don’t hear anything in the preview twice, check your speakers and volume settings. If this doesn’t help or you get an error message, the voice maybe incompatible with the text-to-speech engine of your operating system. To check compatibility, you can also preview the voice via the control panel of the operating system. See section [Requirments For Text-to-speech Output]() for further details.
+If you don’t hear anything in the preview twice, check your speakers and volume settings. If this doesn’t help or you get an error message, the voice maybe incompatible with the text-to-speech engine of your operating system. To check compatibility, you can also preview the voice via the control panel of the operating system. See section [Requirments For Text-to-speech Output](#requirements-for-test-to-speech-output) for further details.
 
 ## Specify the settings for flashing
-Open the **Flashing Settings** dialog by selecting ```<-``` ```->``` **Flashing…** from the menu bar.
+Open the **Flashing Settings** dialog by selecting **→ Flashing…** from the menu bar.
 <p align="center">
 <img src="./img/Img20.png" alt="drawing" width="250"/><br/>
 </p>
@@ -430,7 +500,7 @@ You can configure the following options:
 * **Wait time between two items**: After an item has been selected, the selected item will be displayed for the time specified by this value. In copy-spelling mode or during calibration, the next calibration item will be highlighted for the same amount of time afterwards. Then, the flashing session for this calibration item begins.
 
 ## Specify the settings for item selection
-Open the **Selection Method Settings** dialog by selecting ```<-``` ```->``` **Selection Method…** from the menu bar. An error message is displayed when Unicorn Speller is not calibrated. In that case, confirm the error message first to show the dialog.
+Open the **Selection Method Settings** dialog by selecting **→ Selection Method…** from the menu bar. An error message is displayed when Unicorn Speller is not calibrated. In that case, confirm the error message first to show the dialog.
 <p align="center">
 <img src="./img/Img22.png" alt="drawing" width="250"/><br/>
 </p>
@@ -449,7 +519,7 @@ The selection method to use can be altered after calibration and can be configur
 If the **Standard selection method** is selected, an item will only be selected when the **Maximum number of flashes** (see section [Specify the settings for flashing]()) for the current item has been reached, even if the collected data is not very meaningful (e.g. when the user didn’t focus on a specific item). Thus, the number of executed flashes per item is always the same and equals the specified **Maximum number of flashes**, even if fewer flashes might have been sufficient or more flashes would be necessary to reliably select the user’s target item.
 
 ### Selection method: Dymanic
-The **Dynamic** selection method attempts to select an item before the **Maximum number of flashes** (see section [Specify the settings for flashing]()) has been reached. In this case, the threshold of how different an item must be to be selected must be specified in percent. This **Certainty** must be configured before the selection method is used. Recommended values of this **Certainty** can be displayed by clicking the **Show recommended values** link in the settings dialog, as shown in the following figure Error! Reference source not found..
+The **Dynamic** selection method attempts to select an item before the **Maximum number of flashes** (see section [Specify the settings for flashing](#specify-the-settings-for-flashing)) has been reached. In this case, the threshold of how different an item must be to be selected must be specified in percent. This **Certainty** must be configured before the selection method is used. Recommended values of this **Certainty** can be displayed by clicking the **Show recommended values** link in the settings dialog, as shown in the following figure Error! Reference source not found..
 
 <p align="center">
 <img src="./img/Img24.png" alt="drawing" width="700"/><br/>
@@ -458,7 +528,7 @@ The **Dynamic** selection method attempts to select an item before the **Maximum
 The settings dialog for the Dynamic selection method. Clicking the Show recommended values link will display the recommended values for the Certainty depending on the selected Number of Flashes.
 
 ## Customizing the board and configuring the timing of flashing
-Open the **Board Configuration** dialog by selecting ```<-``` ```->``` **Board and timing…** from the menu bar to customize the board and configure the timing of flashing.
+Open the **Board Configuration** dialog by selecting **→ Board and timing…** from the menu bar to customize the board and configure the timing of flashing.
 
 <p align="center">
 <img src="./img/Img25.png" alt="drawing" width="250"/><br/>
@@ -482,10 +552,10 @@ In the **Configuration** tab, the overall settings of the board can be adjusted.
 </p>
 
 The following colors can be specified and changed by clicking on the colored rectangle next to the corresponding label:
-* **Flash Color**: When an item of the board has text specified in the **Displayed Text** field (see section [Editing the content of the board]()), this text will represent the item in the board. When this item gets flashed now, the color of this text in the board will be set to the **Flash Color**. When using **Flash Image** and **Dark Image** only (without **Displayed Text**; see section [Editing the content of the board]()), this color has no effect.
-* **Dark Color**: This is the color that will be assigned to items with a set **Displayed Text** field (see section 21.14.2) in the board when they are not flashing currently. When using **Flash Image** and **Dark Image** only (without **Displayed Text**; see section [Editing the content of the board]()), this color has no effect.
+* **Flash Color**: When an item of the board has text specified in the **Displayed Text** field (see section [Editing the content of the board](#editing-the-content-of-the-board)), this text will represent the item in the board. When this item gets flashed now, the color of this text in the board will be set to the **Flash Color**. When using **Flash Image** and **Dark Image** only (without **Displayed Text**; see section [Editing the content of the board](#editing-the-content-of-the-board)), this color has no effect.
+* **Dark Color**: This is the color that will be assigned to items with a set **Displayed Text** field (see section 21.14.2) in the board when they are not flashing currently. When using **Flash Image** and **Dark Image** only (without **Displayed Text**; see section [Editing the content of the board](#editing-the-content-of-the-board)), this color has no effect.
 * **Background Color**: Sets the background color of the board.
-* **Preselection Color**: Items that have checked the **Double selection necessary** checkbox must be selected twice before they are actually selected (see section [Editing the content of the board]()). When such an item is selected the first time, its background will be colored with the **Preselection Color**. If the item is selected once again, it is actually selected. Otherwise, its background color is reset to the **Background Color** of the board.
+* **Preselection Color**: Items that have checked the **Double selection necessary** checkbox must be selected twice before they are actually selected (see section [Editing the content of the board](#editing-the-content-of-the-board)). When such an item is selected the first time, its background will be colored with the **Preselection Color**. If the item is selected once again, it is actually selected. Otherwise, its background color is reset to the **Background Color** of the board.
 
 The timing of the flashing can be adjusted in the **Flash Time** and **Dark Time** fields (please see section [0]()).
 The number of displayed rows and columns can be set by the **Rows** and **Columns** field. Please ensure that there are enough cells available to display all contained items.
@@ -506,11 +576,11 @@ In the **Board Items** list box, the current content/items of the board are list
 
 For each item, you can specify the following parameters:
 * **Name**: The name of the item. This is the name that will be displayed in the **Board Items** list box but not in the board.
-* **Displayed Text**: You can either specify text that will be displayed in the board to represent the item or a picture (by using **Flash Image** and **Dark Image**). If you choose text, it will be colored with the specified **Flash Color** and **Dark Color** during flashing (see section [Overall configuration of the board and timing]()).
+* **Displayed Text**: You can either specify text that will be displayed in the board to represent the item or a picture (by using **Flash Image** and **Dark Image**). If you choose text, it will be colored with the specified **Flash Color** and **Dark Color** during flashing (see section [Overall configuration of the board and timing](#overall-configuration-of-the-board-and-timing)).
 * **Output Text**: This is the text that will be written to the **Written text** box if the item has been selected. Note that the **Displayed Text** field just displays the specified text in the board but does not write the **Displayed Text** to the **Written text** box on selection.
 * **Flash Image/Dark Image**: When not using **Displayed Text**, the item can be represented by images. The **Flash Image** will be displayed when the item is currently flashing. The **Dark Image** will be displayed when the item is currently not flashing. The path to these two images can be set. When creating these images, please set a transparent background! The **Flash Color**, **Dark Color** and **Font** properties will have no effect in this case.
 * **Enabled**: If checked, the item will be displayed on the board. If unchecked, the item will not be displayed and cannot be selected in the board, but still exists.
-* **Double selection necessary**: If checked, an item must be selected twice before it is actually selected. When such an item is selected the first time, its background will be colored with the **Preselection Color** (see section [Overall Configuration of the board and timing]()). If the item is selected once again, it is actually selected. Otherwise, its **background color** is reset to the Background Color of the board. This provides a chance to correct a mistake before it is executed. For example, deleting the entire text message should not happen by accident. When this item has to be selected twice, mistakes are much less likely.
+* **Double selection necessary**: If checked, an item must be selected twice before it is actually selected. When such an item is selected the first time, its background will be colored with the **Preselection Color** (see section [Overall Configuration of the board and timing](#overall-configuration-of-the-board-and-timing)). If the item is selected once again, it is actually selected. Otherwise, its **background color** is reset to the Background Color of the board. This provides a chance to correct a mistake before it is executed. For example, deleting the entire text message should not happen by accident. When this item has to be selected twice, mistakes are much less likely.
 
 Character sets of e.g. Asian languages and keyboard layouts must be installed before you can use them. You can add additional keyboard layouts by selecting **Language** from the operating system’s **Control Panel**. By clicking the button **Add a language**, you can add the desired language and keyboard layout.
 
@@ -522,9 +592,9 @@ To use the desired keyboard layout in Unicorn Speller, select one of the recentl
 ## Word Prediction
 Word prediction might speed up writing by predicting possible words that the user plans to spell or by completing the currently written text. Selecting one of those completion suggestions requires only one selection rather than a selection for each missing character.
 
-Word prediction requires two things: an Unicorn Speller dictionary file for the desired language (and context, perhaps), and a board that contains the **Select completion suggestion** items like the two standard boards that are installed together with Unicorn Speller (see section [Items with specially linked actions in the StandardBoard.ibc and StandardFaceBoard.ibc file](), especially subsection [Configuring item: select completeion suggestion]()).
+Word prediction requires two things: an Unicorn Speller dictionary file for the desired language (and context, perhaps), and a board that contains the **Select completion suggestion** items like the two standard boards that are installed together with Unicorn Speller (see section [Items with specially linked actions in the StandardBoard.ibc and StandardFaceBoard.ibc file](#items-with-specially-linked-actions-in-the-standardboardibc-and-standardfaceboardibc-file), especially subsection [Configuring item: select completion suggestion](#configuring-item-select-completion-suggestion)).
 
-| <img src="./img/IconZ.png" alt="drawing" width="200"/>| **Note:** <br/> Unicorn Speller comes with a basic American English dictionary by default. Custom dictionaries for specific contexts or other languages can be created with the Unicorn Speller Dictionary Builder application described in section [Creating custom dictionaries ]().|
+| <img src="./img/IconZ.png" alt="drawing" width="200"/>| **Note:** <br/> Unicorn Speller comes with a basic American English dictionary by default. Custom dictionaries for specific contexts or other languages can be created with the Unicorn Speller Dictionary Builder application described in section [Creating custom dictionaries with the unicorn speller dictionary builder](#creating-custom-dictionaries-with-the-unicorn-speller-dictionary-builder).|
 |-|-|
 
 ### Using Word Prediction
@@ -545,7 +615,7 @@ The **Backspace** key usually undoes the previous item selection, i.e. deletes t
 | <img src="./img/IconZ.png" alt="drawing" width="150"/>| **Note:** <br/> The completion suggestions panel is not updated when text is entered into the **Written text** box manually by keyboard.|
 
 ### Configuring word prediction
-Select ```<-``` ```->``` **Word prediction…** from the menu bar to open the Word Prediction Settings dialog.
+Select **→ Word prediction…** from the menu bar to open the Word Prediction Settings dialog.
 
 <p align="center">
 <img src="./img/Img30.png" alt="drawing" width="250"/><br/>
@@ -570,7 +640,7 @@ The dictionary file does not contain information about its contained culture or 
 | <img src="./img/IconZ.png" alt="drawing" width="200"/>| **Note:** <br/> Pre-installed Unicorn Speller dictionary files contain the ISO language code in the filename. Each language code is made up of a neutral culture code (in lower case) indicating the language of the culture and an optional specific culture code (in upper case) indicating the country represented by the culture, separated by a dash. For example, the language code for American English would be “en-US”, while British English would be represented by “en-GB”.|
 |-|-|
 
-Pre-installed dictionary files that were modified by enabled learning (or accidentally deleted) can be restored using the **Restore…** button. The dialog requires you to select the language/culture for which the dictionary file should be restored. Only cultures for which a pre-installed dictionary file exists are listed. Click the **Save…** button to restore the dictionary under a custom filename. Dictionary files should be placed in the designated subfolder of the Unicorn Speller user directory (see section [Files on your computer]()).
+Pre-installed dictionary files that were modified by enabled learning (or accidentally deleted) can be restored using the **Restore…** button. The dialog requires you to select the language/culture for which the dictionary file should be restored. Only cultures for which a pre-installed dictionary file exists are listed. Click the **Save…** button to restore the dictionary under a custom filename. Dictionary files should be placed in the designated subfolder of the Unicorn Speller user directory (see section [Files on your computer](#files-on-your-computer)).
 
 <p align="center">
 <img src="./img/Img32.png" alt="drawing" width="300"/><br/>
@@ -608,7 +678,7 @@ Unicorn Speller can also send selected items over the network. This feature can 
 | <img src="./img/IconZ.png" alt="drawing" width="250"/>| **Note:** <br/> Items that have their **Double selection necessary** checkbox checked will only be sent if they are selected twice successively. See section [Editing the content of the board](#editing-the-content-of-the-board) for details and section [Items with specially linked actions in the standardboard.ibc and standardfaceboard.ibc file](#items-with-specially-linked-actions-in-the-standardboardibc-and-standardfaceboardibc-file) for items that require double selection.|
 |-|-|
 
-To activate and configure the network output, open the **Network Output Settings** dialog by selecting ```<-``` ```->``` **Network output…** from the menu bar.
+To activate and configure the network output, open the **Network Output Settings** dialog by selecting **→ Network output…** from the menu bar.
 
 <p align="center">
 <img src="./img/Img34.png" alt="drawing" width="250"/><br/>
