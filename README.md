@@ -1,6 +1,16 @@
 # Unicorn Speller Hybrid Black
 Unicorn Speller is a spelling system that uses the P300 complex. Numerous items such as letters flash the screen. The user must silently count each time the item he/she wants to select flashes, and ignore all other flashes.  
 
+[Requirements for test-to-speech output](#Requirements-for-test-to-speech-output)<br/>
+[Files on your computer](#Files-on-your-computer)<br/>
+[Terms](#Terms)<br/>
+[Mounting Unicorn Hybrid EEG Electrodes](#Mounting-Unicorn-Hybrid-EEG-Electrodes)<br/>
+[Starting Unicorn Speller](#Starting-Unicorn-Speller)<br/>
+&nbsp;&nbsp;&nbsp;[Starting Unicorn Speller from the Unicorn Suite](#Starting-Unicorn-Speller-from-the-Unicorn-Suite)<br/>
+&nbsp;&nbsp;&nbsp;[Starting Unicorn Speller via command line](#Starting-Unicorn-Speller-via-command-line)<br/>
+&nbsp;&nbsp;&nbsp;[StructurBehavior of Unicorn Speller on startup](#Behavior-of-Unicorn-Speller-on-startup)<br/>
+[Unicorn Speller](#Unicorn-Speller)<br/>
+
 ## Requirements for test-to-speech output
 Unicorn Speller uses the text-to-speech engines and voices that are supported by the operating system for text-to-speech output. A voice must be displayed and working in the **Text to Speech** link of the control panel’s **Speech Recognition** configuration page before it can be used with Unicorn Speller. When obtaining voices of different styles and languages from third-party vendors, ensure that these voices are compatible with the current version of your operating system.
 
@@ -114,7 +124,7 @@ When starting Unicorn Speller via command line with the ```–record``` option s
 
 On closing the application, a header will be inserted in the first few rows of the file to make the file compatible with g.BSanalyze, a toolbox from g.tec medical engineering GmbH created for MATLAB and SIMULINK. Details on this header can be found in the user manual of g.BSanalyze.
 
-### Behavior of Unicorn Speller of startup
+### Behavior of Unicorn Speller on startup
 The predefined boards with filename ```StandardBoard.ibc```, and ```SimpleBoard.ibc``` and ```EmptyBoard.ibc``` will be restored at each startup of Unicorn Speller in the default directory for predefined board configurations (see section [Files on your computer](#files-on-your-computer)). Therefore, changes made to these files are not persistent.
 
 On startup, Unicorn Speller connects the most recently used Unicorn Brain Interface with the most recently used settings and the main window is shown. If Unicorn Speller can load the most recent calibration, it immediately starts the free-spelling mode with the last used configuration. Otherwise, the user must manually prepare and start spelling.
