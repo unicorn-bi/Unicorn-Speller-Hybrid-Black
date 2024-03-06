@@ -146,10 +146,10 @@ The main window consists of 5 main elements:
 5.	The **board** area in the middle of the main window displays the set of possible selectable items. Double-clicking on an item in standby mode will add it to the calibration items panel.
 
 | **Note:** <br/> You can resize the main window according to your preferences and needs.|
-|-|
+|:-|
 
 | **Note:** <br/> All user specific settings (such as connection, timing,…) and used files (such as calibration file, board configuration file,…) of the application will be stored to a default configuration file when Unicorn Speller is closed. This default configuration is used next time you start Unicorn Speller.|
-|-|
+|:-|
 
 ### Status Indicators
 The status bar contains four status indicators:
@@ -241,7 +241,7 @@ You can select a different Unicorn Brain Interface by selecting the desired seri
 <img src="./img/Img7.png" alt="drawing" width="600"/><br/>
 </p>
 
-| **Note:** <br/> The dialog displays the filter settings of the hardware (i.e. the Unicorn Brain Interface) only. Unicorn Speller additionally uses software filters for signal processing, but their settings are not displayed in the **Data Acquisition Configuration** dialog.|
+| **Note:** <br/> The dialog displays the filter settings of the hardware (i.e. the Unicorn Brain Interface) only. Unicorn Speller additionally uses software filters for signal processing, but their settings are not displayed in the **Data Acquisition Configuration** dialog.
 |-|
 
 | **Note:** <br/> When a serial number is selected in the drop-down list but the **Connection State** keeps indicating that the Unicorn Brain Interface is not found, ensure that the Unicorn Brain Interface is turned on and paired.|
