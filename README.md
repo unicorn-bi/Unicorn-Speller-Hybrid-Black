@@ -21,7 +21,7 @@ Unicorn Speller uses the text-to-speech engines and voices that are supported by
 Select Speech Recognition from the operating system's control panel and click the Text to Speech item on the left to open the Speech Properties window. A voice must be listed under 'Voice selection' before it can be used with Unicorn Speller. 
 
 
-| <img src="./img/IconAttention.png" alt="drawing" width="200"/>| **Attention:** <br/> A voice that is not compatible with the currently used operating system version will not work and can cause the program to crash or work improperly!|
+| <div style="width:50px"><img src="./img/IconAttention.png" alt="drawing"/></div>| **Attention:** <br/> A voice that is not compatible with the currently used operating system version will not work and can cause the program to crash or work improperly!|
 |-|-|
 
 ## Files on your computer
@@ -145,10 +145,10 @@ The main window consists of 5 main elements:
     - The **completion suggestions** panel is not shown if word prediction is disabled. In this case, selection of an up-arrow item would have no effect. See sections [Word Prediction](#word-prediction) and [Configuring item: Select completion suggestion](#configuring-item-select-completion-suggestion) for details on word prediction.
 5.	The **board** area in the middle of the main window displays the set of possible selectable items. Double-clicking on an item in standby mode will add it to the calibration items panel.
 
-| <img src="./img/IconZ.png" alt="drawing" width="50"/>| **Note:** <br/> You can resize the main window according to your preferences and needs.|
+| <div style="width:50px"><img src="./img/IconZ.png" alt="drawing"/></div>| **Note:** <br/> You can resize the main window according to your preferences and needs.|
 |-|-|
 
-| <img src="./img/IconZ.png" alt="drawing" width="200"/>| **Note:** <br/> All user specific settings (such as connection, timing,…) and used files (such as calibration file, board configuration file,…) of the application will be stored to a default configuration file when Unicorn Speller is closed. This default configuration is used next time you start Unicorn Speller.|
+| <div style="width:50px"><img src="./img/IconZ.png" alt="drawing"/></div>| **Note:** <br/> All user specific settings (such as connection, timing,…) and used files (such as calibration file, board configuration file,…) of the application will be stored to a default configuration file when Unicorn Speller is closed. This default configuration is used next time you start Unicorn Speller.|
 |-|-|
 
 
@@ -234,7 +234,7 @@ The **Data Acquisition Configuration** dialog will open as shown below.
 
 If your Unicorn Brain Interface is not listed in the drop-down menu but it is connected to your PC, click the **Find connected devices** button. Unicorn Speller now searches for paired Unicorn Brain Interfaces and lists the serial numbers of the found devices in the drop-down list afterwards. While the application tries to establish a connection to the first found Unicorn Brain Interface, the **Connection State** indicator changes its state to Connecting…. This may take several seconds.
 
-| <img src="./img/IconAttention.png" alt="drawing" width="200"/>| **Attention:** <br/> If the **Data Acquisition Configuration** dialog states that an unrecommended Bluetooth adapter or no Bluetooth adapter is detected, please connect the recommended Bluetooth adapter that was shipped together with your Unicorn and disconnect all other Bluetooth adapters. Also, disable a possibly built-in Bluetooth adapter. Otherwise, the Unicorn might not work properly. Search again for connected Unicorns when the recommended Bluetooth adapter is connected.|
+| <div style="width:50px"><img src="./img/IconAttention.png" alt="drawing"/></div>| **Attention:** <br/> If the **Data Acquisition Configuration** dialog states that an unrecommended Bluetooth adapter or no Bluetooth adapter is detected, please connect the recommended Bluetooth adapter that was shipped together with your Unicorn and disconnect all other Bluetooth adapters. Also, disable a possibly built-in Bluetooth adapter. Otherwise, the Unicorn might not work properly. Search again for connected Unicorns when the recommended Bluetooth adapter is connected.|
 |-|-|
 
 You can select a different Unicorn Brain Interface by selecting the desired serial number from the drop-down list. When a connection could be established, the **Connection State** indicator changes its state to Device found and reads the configuration of the Unicorn Brain Interface (see **Error! Reference source not found**.).
@@ -243,10 +243,10 @@ You can select a different Unicorn Brain Interface by selecting the desired seri
 <img src="./img/Img7.png" alt="drawing" width="600"/><br/>
 </p>
 
-| <img src="./img/IconZ.png" alt="drawing" width="200"/>| **Note:** <br/> The dialog displays the filter settings of the hardware (i.e. the Unicorn Brain Interface) only. Unicorn Speller additionally uses software filters for signal processing, but their settings are not displayed in the **Data Acquisition Configuration** dialog.|
+| <div style="width:50px"><img src="./img/IconZ.png" alt="drawing"/></div>| **Note:** <br/> The dialog displays the filter settings of the hardware (i.e. the Unicorn Brain Interface) only. Unicorn Speller additionally uses software filters for signal processing, but their settings are not displayed in the **Data Acquisition Configuration** dialog.|
 |-|-|
 
-| <img src="./img/IconZ.png" alt="drawing" width="200"/>| **Note:** <br/> When a serial number is selected in the drop-down list but the **Connection State** keeps indicating that the Unicorn Brain Interface is not found, ensure that the Unicorn Brain Interface is turned on and paired.|
+| <div style="width:50px"><img src="./img/IconZ.png" alt="drawing"/></div>| **Note:** <br/> When a serial number is selected in the drop-down list but the **Connection State** keeps indicating that the Unicorn Brain Interface is not found, ensure that the Unicorn Brain Interface is turned on and paired.|
 |-|-|
 
 Click **OK** to establish a connection with the selected Unicorn, configure it with the chosen options and start data acquisition.
@@ -278,7 +278,7 @@ Select <img src="./img/IconDataViewer.png" alt="drawing" width="15"/> from the m
 
 The data viewer shows the signal of each channel in a regular scaling range between ```-50 µV``` and ```+50 µV``` (µV = ```microvolts```) in a separate color for a period of ```10``` seconds. Data are overwritten from left to right. If signal amplitudes exceed the scaling range, the signals will overlap the area of channels below or above. The signals will only be truncated at the top and the bottom of the whole drawing area, respectively. Corresponding channel numbers and signals are plotted in the same color.
 
-| <img src="./img/IconZ.png" alt="drawing" width="200"/>| **Note:** <br/> Spontaneous EEG signal amplitudes are typically within the range of ```±50 µV``` (using monopolar derivation techniques). If the signals are much smaller or much bigger, please check your electrode settings.|
+| <div style="width:50px"><img src="./img/IconZ.png" alt="drawing"/></div>| **Note:** <br/> Spontaneous EEG signal amplitudes are typically within the range of ```±50 µV``` (using monopolar derivation techniques). If the signals are much smaller or much bigger, please check your electrode settings.|
 |-|-|
 
 
@@ -320,7 +320,7 @@ There are two built-in signal quality criteria that will be checked: the bandpow
 
     Run through the following steps to successfully calibrate Unicorn Speller:
 
-    | <img src="./img/IconZ.png" alt="drawing" width="50"/>| **Note:** <br/> Read through all the steps before actually executing them.|
+    | <div style="width:50px"><img src="./img/IconZ.png" alt="drawing"/></div>| **Note:** <br/> Read through all the steps before actually executing them.|
     |-|-|
 
     1.	Ensure that the Unicorn Hybrid EEG Electrodes are mounted correctly, the Unicorn Brain Interface runs, Unicorn Speller is connected to the Unicorn Brain Interface and receives data from it (status indicator must say that data acquisition is running) and the signals are of a good quality. Also ensure that Unicorn Speller is in standby mode, i.e. flashing must be stopped (<img src="./img/IconStop1.png" alt="drawing" width="15"/>).
@@ -472,13 +472,13 @@ To set or change the directory where the text files will be stored on selecting 
 
 In the **Output Path** text field, set the directory to store the text files created on selection of the **Save** item. Instead of typing the location, you can click the **…** button to navigate to the directory.
 
-| <img src="./img/IconZ.png" alt="drawing" width="200"/>| **Note:** <br/> Only the directory can be specified, not the filename. The filename will be set by the application as described above, and contains a time stamp of the saving date.|
+| <div style="width:50px"><img src="./img/IconZ.png" alt="drawing"/></div>| **Note:** <br/> Only the directory can be specified, not the filename. The filename will be set by the application as described above, and contains a time stamp of the saving date.|
 |-|-|
 
 ### Configuring item: Speech Output
 When the item **Speech output** has been selected twice (as it is necessary because of double selection) the whole **Written text** will be read aloud by the operating system’s text-to-speech engine. 
 
-| <img src="./img/IconZ.png" alt="drawing" width="200"/>| **Note:** <br/> For requirements to perform text-to-speech output and installing additional voices and languages, see section [Requirments For Text-to-speech Output](#requirements-for-test-to-speech-output).|
+| <div style="width:50px"><img src="./img/IconZ.png" alt="drawing"/></div>| **Note:** <br/> For requirements to perform text-to-speech output and installing additional voices and languages, see section [Requirments For Text-to-speech Output](#requirements-for-test-to-speech-output).|
 |-|-|
 
 To select a specific voice and language and the speed of reading, open the **Speech Output Settings** dialog by selecting **→ Speech output…** from the menu bar.
@@ -522,7 +522,7 @@ The currently used calibration file (usually the one from the most recent calibr
 
 The selection method to use can be altered after calibration and can be configured by clicking the **Settings** button.
 
-| <img src="./img/IconZ.png" alt="drawing" width="200"/>| **Note:** <br/> During flashing, the user should be in a relaxed position to obtain good results. Muscle activity or eye blinking could cause erroneous selections due to heavy artifacts in the EEG signals.|
+| <div style="width:50px"><img src="./img/IconZ.png" alt="drawing"/></div>| **Note:** <br/> During flashing, the user should be in a relaxed position to obtain good results. Muscle activity or eye blinking could cause erroneous selections due to heavy artifacts in the EEG signals.|
 |-|-|
 
 ### Selection method: Standard
@@ -581,7 +581,7 @@ The **Board Content** tab of the **Board Configuration** dialog lets you specify
 
 In the **Board Items** list box, the current content/items of the board are listed (the specified **Name** of each item is displayed). The items are arranged from right to left and from top to bottom on the board. The first item in the list represents the top-left item on the board. Items below in the list are arranged on the right of the previous item in the same row. The item will be placed in a new row (below the previous one and on the most left column) if the current row is filled.
 
-| <img src="./img/IconZ.png" alt="drawing" width="200"/>| **Note:** <br/> When the file ```StandardFaceBoard.ibc``` is used, there are some items that cannot be removed because they are linked with internal actions. <br/> Create an empty board by loading the file ```EmptyBoard.ibc``` to add your own items (see section [Customizing the board and configuring the timing of flashing]() for details). Don’t forget to save your changes afterwards to a new file (do NOT save changes to the ```EmptyBoard.ibc``` file; your changes will get lost on the next startup of Unicorn Speller). |
+| <div style="width:50px"><img src="./img/IconZ.png" alt="drawing"/></div>| **Note:** <br/> When the file ```StandardFaceBoard.ibc``` is used, there are some items that cannot be removed because they are linked with internal actions. <br/> Create an empty board by loading the file ```EmptyBoard.ibc``` to add your own items (see section [Customizing the board and configuring the timing of flashing]() for details). Don’t forget to save your changes afterwards to a new file (do NOT save changes to the ```EmptyBoard.ibc``` file; your changes will get lost on the next startup of Unicorn Speller). |
 |-|-|
 
 For each item, you can specify the following parameters:
@@ -594,7 +594,7 @@ For each item, you can specify the following parameters:
 
 Character sets of e.g. Asian languages and keyboard layouts must be installed before you can use them. You can add additional keyboard layouts by selecting **Language** from the operating system’s **Control Panel**. By clicking the button **Add a language**, you can add the desired language and keyboard layout.
 
-| <img src="./img/IconZ.png" alt="drawing" width="100"/>| **Note:** <br/> You probably have to install the desired keyboard layout before using the installation resources of your operating system.|
+| <div style="width:50px"><img src="./img/IconZ.png" alt="drawing"/></div>| **Note:** <br/> You probably have to install the desired keyboard layout before using the installation resources of your operating system.|
 |-|-|
 
 To use the desired keyboard layout in Unicorn Speller, select one of the recently installed layouts listed in the **Input Method/Keyboard Layout (IME)** drop-down list.
@@ -604,7 +604,7 @@ Word prediction might speed up writing by predicting possible words that the use
 
 Word prediction requires two things: an Unicorn Speller dictionary file for the desired language (and context, perhaps), and a board that contains the **Select completion suggestion** items like the two standard boards that are installed together with Unicorn Speller (see section [Items with specially linked actions in the StandardBoard.ibc and StandardFaceBoard.ibc file](#items-with-specially-linked-actions-in-the-standardboardibc-and-standardfaceboardibc-file), especially subsection [Configuring item: select completion suggestion](#configuring-item-select-completion-suggestion)).
 
-| <img src="./img/IconZ.png" alt="drawing" width="200"/>| **Note:** <br/> Unicorn Speller comes with a basic American English dictionary by default. Custom dictionaries for specific contexts or other languages can be created with the Unicorn Speller Dictionary Builder application described in section [Creating custom dictionaries with the unicorn speller dictionary builder](#creating-custom-dictionaries-with-the-unicorn-speller-dictionary-builder).|
+| <div style="width:50px"><img src="./img/IconZ.png" alt="drawing"/></div>| **Note:** <br/> Unicorn Speller comes with a basic American English dictionary by default. Custom dictionaries for specific contexts or other languages can be created with the Unicorn Speller Dictionary Builder application described in section [Creating custom dictionaries with the unicorn speller dictionary builder](#creating-custom-dictionaries-with-the-unicorn-speller-dictionary-builder).|
 |-|-|
 
 ### Using Word Prediction
@@ -620,9 +620,9 @@ If a slot in the completion suggestion panel does not contain anything, a select
 
 The **Backspace** key usually undoes the previous item selection, i.e. deletes the last character written to the **Written text** box by selection. If the **Backspace** key is selected right after a completion suggestion was selected, all of the completed text is removed.
 
-| <img src="./img/IconZ.png" alt="drawing" width="150"/>| **Note:** <br/> The default dictionary is not case sensitive, since the board does not support case sensitivity. Numbers and punctuation items will be treated as word separators (like whitespaces) or sentence separators.|
+| <div style="width:50px"><img src="./img/IconZ.png" alt="drawing"/></div>| **Note:** <br/> The default dictionary is not case sensitive, since the board does not support case sensitivity. Numbers and punctuation items will be treated as word separators (like whitespaces) or sentence separators.|
 |-|-|
-| <img src="./img/IconZ.png" alt="drawing" width="150"/>| **Note:** <br/> The completion suggestions panel is not updated when text is entered into the **Written text** box manually by keyboard.|
+| <div style="width:50px"><img src="./img/IconZ.png" alt="drawing"/></div>| **Note:** <br/> The completion suggestions panel is not updated when text is entered into the **Written text** box manually by keyboard.|
 
 ### Configuring word prediction
 Select **→ Word prediction…** from the menu bar to open the Word Prediction Settings dialog.
@@ -640,14 +640,14 @@ Word prediction can be enabled or disabled with the **Enable Prediction** checkb
 
 If **Learn** is enabled, the word counts in the currently used dictionary get updated with each complete or completed word written in the **Written text** box. It might require several repetitions of learned word sequences until they take any effect in the presented completion suggestions.
 
-| <img src="./img/IconAttention.png" alt="drawing" width="200"/>| **Note:** <br/> Enabled learning modifies the dictionary file. Only if a pre-installed dictionary file was used and modified, it can be restored to its original state with the Restore… button (see below). Custom dictionaries that were not installed with Unicorn Speller cannot be restored to their original state automatically.|
+| <div style="width:50px"><img src="./img/IconAttention.png" alt="drawing"/></div>| **Note:** <br/> Enabled learning modifies the dictionary file. Only if a pre-installed dictionary file was used and modified, it can be restored to its original state with the Restore… button (see below). Custom dictionaries that were not installed with Unicorn Speller cannot be restored to their original state automatically.|
 |-|-|
 
 The path to the **Dictionary File** to use must be specified in the appropriate text field. Word prediction is only available if the specified path points to a valid Unicorn Speller dictionary file. Unicorn Speller dictionary files have the ```*.dic``` extension.
 
 The dictionary file does not contain information about its contained culture or language. Thus, the correct culture of the selected dictionary file must be specified in the **Culture** setting.
 
-| <img src="./img/IconZ.png" alt="drawing" width="200"/>| **Note:** <br/> Pre-installed Unicorn Speller dictionary files contain the ISO language code in the filename. Each language code is made up of a neutral culture code (in lower case) indicating the language of the culture and an optional specific culture code (in upper case) indicating the country represented by the culture, separated by a dash. For example, the language code for American English would be “en-US”, while British English would be represented by “en-GB”.|
+| <div style="width:50px"><img src="./img/IconZ.png" alt="drawing"/></div>| **Note:** <br/> Pre-installed Unicorn Speller dictionary files contain the ISO language code in the filename. Each language code is made up of a neutral culture code (in lower case) indicating the language of the culture and an optional specific culture code (in upper case) indicating the country represented by the culture, separated by a dash. For example, the language code for American English would be “en-US”, while British English would be represented by “en-GB”.|
 |-|-|
 
 Pre-installed dictionary files that were modified by enabled learning (or accidentally deleted) can be restored using the **Restore…** button. The dialog requires you to select the language/culture for which the dictionary file should be restored. Only cultures for which a pre-installed dictionary file exists are listed. Click the **Save…** button to restore the dictionary under a custom filename. Dictionary files should be placed in the designated subfolder of the Unicorn Speller user directory (see section [Files on your computer](#files-on-your-computer)).
@@ -656,13 +656,13 @@ Pre-installed dictionary files that were modified by enabled learning (or accide
 <img src="./img/Img32.png" alt="drawing" width="300"/><br/>
 </p>
 
-| <img src="./img/IconAttention.png" alt="drawing" width="200"/>| **Note:** <br/> Overwriting or deleting a modified pre-installed dictionary file results in loss of the modifications like new words or word combinations learned during usage (the original dictionary file can still be restored with the **Restore…** button). <br/> Overwriting or deleting a custom dictionary file results in complete loss of the dictionary. It’s the user’s responsibility to create backups of modified or custom dictionary files. |
+| <div style="width:50px"><img src="./img/IconAttention.png" alt="drawing"/></div>| **Note:** <br/> Overwriting or deleting a modified pre-installed dictionary file results in loss of the modifications like new words or word combinations learned during usage (the original dictionary file can still be restored with the **Restore…** button). <br/> Overwriting or deleting a custom dictionary file results in complete loss of the dictionary. It’s the user’s responsibility to create backups of modified or custom dictionary files. |
 |-|-|
 
 ### Creating custom dictionaries with the unicorn speller dictionary builder
 Custom Unicorn Speller dictionaries can be created by the user for different languages (and/or different contexts) with the Unicorn Speller Dictionary Builder application that is installed together with Unicorn Speller. It takes plain text files as input and builds a dictionary database based on the occurrences of contained word combinations. Thus, we recommend that you  select the text files used for input carefully. They should cover a wide range of words and word combinations, but should also be tailored to the context in which the dictionary will be used.
 
-| <img src="./img/IconZ.png" alt="drawing" width="200"/>| **Note:** <br/> The better the training text files match the context in which the dictionary will be used, the better the prediction’s hit ratio will be. For example, texts from the 19th century would not provide good predictions if the user wants to write sentences in contemporary everyday language, just as a broad spectrum of scripts in everyday language might not be sufficient if communication targets a specific discipline.|
+| <div style="width:50px"><img src="./img/IconZ.png" alt="drawing"/></div>| **Note:** <br/> The better the training text files match the context in which the dictionary will be used, the better the prediction’s hit ratio will be. For example, texts from the 19th century would not provide good predictions if the user wants to write sentences in contemporary everyday language, just as a broad spectrum of scripts in everyday language might not be sufficient if communication targets a specific discipline.|
 |-|-|
 
 Start the Unicorn Speller Dictionary Builder application by clicking the corresponding icon in the start menu. The application’s main window will show up as inError! Reference source not found..
@@ -679,13 +679,13 @@ As long as case sensitivity should not be concerned in prediction, the **Lower-c
 
 Click the **Train…** button to create the Unicorn Speller dictionary file from the selected training text files. The training process might take a while, depending on the amount of text to parse. Afterwards, the application prompts a dialog to select the location and filename where the resulting dictionary ```*.dic``` file should be saved to. Unicorn Speller dictionaries should be stored in the designated subfolder of the Unicorn Speller user directory (see section [File on your computer](#files-on-your-computer)).
 
-| <img src="./img/IconZ.png" alt="drawing" width="100"/>| **Note:** <br/> It is recommended to include the language or culture and a potentially specialized context in the filename to be able to identify the dictionary’s content afterwards.|
+| <div style="width:50px"><img src="./img/IconZ.png" alt="drawing"/></div>| **Note:** <br/> It is recommended to include the language or culture and a potentially specialized context in the filename to be able to identify the dictionary’s content afterwards.|
 |-|-|
 
 ## Configuring network output
 Unicorn Speller can also send selected items over the network. This feature can be useful when other applications should react to a selection and execute actions corresponding to selected items.
 
-| <img src="./img/IconZ.png" alt="drawing" width="250"/>| **Note:** <br/> Items that have their **Double selection necessary** checkbox checked will only be sent if they are selected twice successively. See section [Editing the content of the board](#editing-the-content-of-the-board) for details and section [Items with specially linked actions in the standardboard.ibc and standardfaceboard.ibc file](#items-with-specially-linked-actions-in-the-standardboardibc-and-standardfaceboardibc-file) for items that require double selection.|
+| <div style="width:50px"><img src="./img/IconZ.png" alt="drawing"/></div>| **Note:** <br/> Items that have their **Double selection necessary** checkbox checked will only be sent if they are selected twice successively. See section [Editing the content of the board](#editing-the-content-of-the-board) for details and section [Items with specially linked actions in the standardboard.ibc and standardfaceboard.ibc file](#items-with-specially-linked-actions-in-the-standardboardibc-and-standardfaceboardibc-file) for items that require double selection.|
 |-|-|
 
 To activate and configure the network output, open the **Network Output Settings** dialog by selecting **→ Network output…** from the menu bar.
@@ -716,7 +716,7 @@ Execute the following steps to test the connection:
     <p align="center"><img src="./img/Img36.png" alt="drawing" width="400"/><br/></p>
 
 4. In the **Network Client** window on the receiving PC, enter the IP address of the receiving PC and the port where you want to receive the network output from. In the example, we assumed this IP address is ```192.168.100.162``` and port ```10```. Then, click the **Start** button.
-    | <img src="./img/IconAttention.png" alt="drawing" width="200"/>| **Attention:** <br/> Ensure that the firewall on the receiving PC allows incoming connections on the specified port from Unicorn Speller on the sending PC (the sending PC’s IP address might be displayed).|
+    | <div style="width:50px"><img src="./img/IconAttention.png" alt="drawing"/></div>| **Attention:** <br/> Ensure that the firewall on the receiving PC allows incoming connections on the specified port from Unicorn Speller on the sending PC (the sending PC’s IP address might be displayed).|
     |-|-|
 
     The **Network Client** starts listening on the specified network port now and may look like the following figure Error! Reference source not found.:
@@ -725,7 +725,7 @@ Execute the following steps to test the connection:
 5. In the **Network Output Settings** dialog of Unicorn Speller on the sending PC, enter the IP address of the receiving PC and the ports to which the data should be sent from the sending PC and received from the receiving PC (if disabled, check the **Send selected items over network broadcast** checkbox first). The receiving PC must be listening to the same port, and the IP address is usually the same too.
 
 6. Check the checkbox **Use external receiver** in the **Network Output Settings** dialog of Unicorn Speller on the sending PC, set the **Timeout** to 1 second and click the **Send Item…** button. A test item with the specified name will be generated and sent to the specified destination address. The dialog might look like in the following figureError! Reference source not found..
-    | <img src="./img/IconAttention.png" alt="drawing" width="200"/>| **Attention:** <br/> Ensure that the firewall on the sending PC allows outgoing connections from Unicorn Speller to the specified destination IP address and port.|
+    | <div style="width:50px"><img src="./img/IconAttention.png" alt="drawing"/></div>| **Attention:** <br/> Ensure that the firewall on the sending PC allows outgoing connections from Unicorn Speller to the specified destination IP address and port.|
     |-|-|
     <p align="center"><img src="./img/Img38.png" alt="drawing" width="400"/><br/></p>
 
@@ -733,7 +733,7 @@ Execute the following steps to test the connection:
     <p align="center"><img src="./img/Img39.png" alt="drawing" width="400"/><br/></p>
 
 8. Stop the **Network Client** on the receiving PC listening by clicking the **Stop** button and close it clicking the **Close** button.
-    | <img src="./img/IconZ.png" alt="drawing" width="200"/>| **Note:** <br/> The connection between Unicorn Speller on the sending PC and the receiving PC is working now. The only thing left is to configure your external application to receive data from Unicorn Speller. Please check the manual of that application for further instructions on how to do this.|
+    | <div style="width:50px"><img src="./img/IconZ.png" alt="drawing"/></div>| **Note:** <br/> The connection between Unicorn Speller on the sending PC and the receiving PC is working now. The only thing left is to configure your external application to receive data from Unicorn Speller. Please check the manual of that application for further instructions on how to do this.|
     |-|-|
 
 ## Programming applications using Unicorn Speller's network output
@@ -741,7 +741,7 @@ This section describes the steps necessary to receive items sent from Unicorn Sp
 
 <p align="center">
 
-|<img src="./img/IconZ.png" alt="drawing" width="50"/>|**Note:** <br/> For software developers only!|
+| <div style="width:50px"><img src="./img/IconZ.png" alt="drawing"/></div>|**Note:** <br/> For software developers only!|
 |-|-|
 </p>
 
