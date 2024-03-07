@@ -8,8 +8,36 @@ Unicorn Speller is a spelling system that uses the P300 complex. Numerous items 
 [Starting Unicorn Speller](#Starting-Unicorn-Speller)<br/>
 &nbsp;&nbsp;&nbsp;[Starting Unicorn Speller from the Unicorn Suite](#Starting-Unicorn-Speller-from-the-Unicorn-Suite)<br/>
 &nbsp;&nbsp;&nbsp;[Starting Unicorn Speller via command line](#Starting-Unicorn-Speller-via-command-line)<br/>
-&nbsp;&nbsp;&nbsp;[StructurBehavior of Unicorn Speller on startup](#Behavior-of-Unicorn-Speller-on-startup)<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[File format of the recorded samples using the -record option]( #File-format-of-the-recorded-samples-using-the--record-option)<br/>
+&nbsp;&nbsp;&nbsp;[Behavior of Unicorn Speller on startup](#Behavior-of-Unicorn-Speller-on-startup)<br/>
 [Unicorn Speller](#Unicorn-Speller)<br/>
+&nbsp;&nbsp;&nbsp;[Status Indicators](#Status-Indicators)<br/>
+[Establish a connection to the Unicorn Brain Interface](#Establish-a-connection-to-the-Unicorn-Brain-Interface)<br/>
+&nbsp;&nbsp;&nbsp;[Connection via Bluetooth](#Connection-via-Bluetooth)<br/>
+&nbsp;&nbsp;&nbsp;[Loss of Connection](#Loss-of-Connection)<br/>
+&nbsp;&nbsp;&nbsp;[No connection between Unicorn Speller and Unicorn Brain Interface](#No-connection-between-Unicorn-Speller-and-Unicorn-Brain-Interface)<br/>
+[Check Signal Quality](#Check-Signal-Quality)<br/>
+&nbsp;&nbsp;&nbsp;[The Data Viewer](#The-Data-Viewer)<br/>
+&nbsp;&nbsp;&nbsp;[Integrated Signal Quality Criteria](#Integrated-Signal-Quality-Criteria)<br/>
+[Calibrate Unicorn Speller](#Calibrate-Unicorn-Speller)<br/>
+[Write with Unicorn Speller](#Write-with-Unicorn-Speller)<br/>
+&nbsp;&nbsp;&nbsp;[Configuring item: Select completion suggestion](#Configuring-item:-Select-completion-suggestion)<br/>
+&nbsp;&nbsp;&nbsp;[Configuring item: Save](#Configuring-item:-Save)<br/>
+&nbsp;&nbsp;&nbsp;[Configuring item: Speech Output](#Configuring-item:-Speech-Output)<br/>
+[Specify the settings for flashing](#Specify-the-settings-for-flashing)<br/>
+[Specify the settings for item selection](#Specify-the-settings-for-item-selection)<br/>
+&nbsp;&nbsp;&nbsp;[Selection method: Standard](#Selection-method:-Standard)<br/>
+&nbsp;&nbsp;&nbsp;[Selection method: Dynamic](#Selection-method:-Dynamic)<br/>
+[Customizing the board and configuring the timing of flashing](#Customizing-the-board-and-configuring-the-timing-of-flashing)<br/>
+&nbsp;&nbsp;&nbsp;[Overall configuration of the board and timing](#Overall-configuration-of-the-board-and-timing)<br/>
+&nbsp;&nbsp;&nbsp;[Editing the content of the board](#Editing-the-content-of-the-board)<br/>
+[Word Prediction](#Word-Prediction)<br/>
+&nbsp;&nbsp;&nbsp;[Using Word Prediction](#Using-Word-Prediction)<br/>
+&nbsp;&nbsp;&nbsp;[Configuring word prediction](#Configuring-word-prediction)<br/>
+&nbsp;&nbsp;&nbsp;[Creating custom dictionaries with the unicorn speller dictionary builder](#Creating-custom-dictionaries-with-the-unicorn-speller-dictionary-builder)<br/>
+[Configuring network output](#Configuring-network-output)<br/>
+[Programming applications using Unicorn Speller's network output](#Programming-applications-using-Unicorn-Speller's-network-output)<br/>
+
 
 ## Requirements for test-to-speech output
 Unicorn Speller uses the text-to-speech engines and voices that are supported by the operating system for text-to-speech output. A voice must be displayed and working in the **Text to Speech** link of the control panel’s **Speech Recognition** configuration page before it can be used with Unicorn Speller. When obtaining voices of different styles and languages from third-party vendors, ensure that these voices are compatible with the current version of your operating system.
@@ -256,7 +284,7 @@ Unicorn Speller can reconnect to the Unicorn Brain Interface.
 ## Check Signal Quality
 Before you start working with Unicorn Speller, you should ensure that the incoming signals are high quality, so that Unicorn Speller will operate under optimal conditions. You can either investigate the incoming signals using the built-in data viewer or you can obtain information about the signal quality of each channel by defining threshold values of the integrated quality criteria. Both options are described in this section.
 
-### THe Data Viewer
+### The Data Viewer
 Open the Data Viewer by selecting <img src="./img/IconDataViewer.png" alt="drawing" width="15"/> from the menu bar. The data viewer will open.
 
 <p align="center">
@@ -306,16 +334,16 @@ There are two built-in signal quality criteria that will be checked: the bandpow
 - **The bandpower mean difference criterion**: 
     - The signal processing chain of Unicorn Speller applies notch filters that block frequencies around 50 Hz and 60 Hz on the incoming signal from the Unicorn Brain Interface and a bandpass filter with cutoff frequencies of 0.1 Hz and 30 Hz afterwards. First, the mean signal amplitude of the 50 Hz and 60 Hz frequency component of the signal (within a band of ±2 Hz) after the notch filtering is calculated. Then the mean signal amplitude within the frequency range of 0.1 – 30 Hz after the bandpass filtering is calculated. If the difference between the calculated mean value after bandpass filtering and the calculated mean value after notch filtering (i.e. bandpass minus notch) is greater than 0.1 µV, the signal quality is said to be ```Good```. Otherwise, the signal quality is said to be ```Poor```.
 
-    ## Calibrate Unicorn Speller
-    Unicorn Speller must be calibrated before its first use. During calibration, Unicorn Speller learns the difference between the user’s typical EEG signals after a calibration item flashes and after all other (non-calibration) items flash. In particular, calibration creates a decision boundary that best separates the recorded signals for calibration items from all other non-calibration items. For a new signal (that comes after calibration), Unicorn Speller then decides whether this signal better matches the recorded signals for a calibration or a non-calibration item from the previous calibration session.
+## Calibrate Unicorn Speller
+Unicorn Speller must be calibrated before its first use. During calibration, Unicorn Speller learns the difference between the user’s typical EEG signals after a calibration item flashes and after all other (non-calibration) items flash. In particular, calibration creates a decision boundary that best separates the recorded signals for calibration items from all other non-calibration items. For a new signal (that comes after calibration), Unicorn Speller then decides whether this signal better matches the recorded signals for a calibration or a non-calibration item from the previous calibration session.
 
-    Run through the following steps to successfully calibrate Unicorn Speller:
+Run through the following steps to successfully calibrate Unicorn Speller:
 
-    **Note:** <br/> Read through all the steps before actually executing them.
+**Note:** <br/> Read through all the steps before actually executing them.
 
-    1.	Ensure that the Unicorn Hybrid EEG Electrodes are mounted correctly, the Unicorn Brain Interface runs, Unicorn Speller is connected to the Unicorn Brain Interface and receives data from it (status indicator must say that data acquisition is running) and the signals are of a good quality. Also ensure that Unicorn Speller is in standby mode, i.e. flashing must be stopped (<img src="./img/IconStop1.png" alt="drawing" width="15"/>).
+1.	Ensure that the Unicorn Hybrid EEG Electrodes are mounted correctly, the Unicorn Brain Interface runs, Unicorn Speller is connected to the Unicorn Brain Interface and receives data from it (status indicator must say that data acquisition is running) and the signals are of a good quality. Also ensure that Unicorn Speller is in standby mode, i.e. flashing must be stopped (<img src="./img/IconStop1.png" alt="drawing" width="15"/>).
 
-    2. Add a sequence of items to the calibration items panel by double-clicking the desired items on the board. This is the sequence that the user must sequentially count during calibration. For a reasonable calibration, at least 4 calibration items are recommended. In the figure below, the sequence ```GTEC``` has been selected as a calibration item sequence.
+2. Add a sequence of items to the calibration items panel by double-clicking the desired items on the board. This is the sequence that the user must sequentially count during calibration. For a reasonable calibration, at least 4 calibration items are recommended. In the figure below, the sequence ```GTEC``` has been selected as a calibration item sequence.
 
 <p align="center">
 <img src="./img/Img12.png" alt="drawing" width="800"/><br/>
@@ -512,7 +540,7 @@ The selection method to use can be altered after calibration and can be configur
 ### Selection method: Standard
 If the **Standard selection method** is selected, an item will only be selected when the **Maximum number of flashes** (see section [Specify the settings for flashing]()) for the current item has been reached, even if the collected data is not very meaningful (e.g. when the user didn’t focus on a specific item). Thus, the number of executed flashes per item is always the same and equals the specified **Maximum number of flashes**, even if fewer flashes might have been sufficient or more flashes would be necessary to reliably select the user’s target item.
 
-### Selection method: Dymanic
+### Selection method: Dynamic
 The **Dynamic** selection method attempts to select an item before the **Maximum number of flashes** (see section [Specify the settings for flashing](#specify-the-settings-for-flashing)) has been reached. In this case, the threshold of how different an item must be to be selected must be specified in percent. This **Certainty** must be configured before the selection method is used. Recommended values of this **Certainty** can be displayed by clicking the **Show recommended values** link in the settings dialog, as shown in the following figure Error! Reference source not found..
 
 <p align="center">
