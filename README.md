@@ -486,8 +486,7 @@ To set or change the directory where the text files will be stored on selecting 
 
 In the **Output Path** text field, set the directory to store the text files created on selection of the **Save** item. Instead of typing the location, you can click the **…** button to navigate to the directory.
 
-| **Note:** <br/> Only the directory can be specified, not the filename. The filename will be set by the application as described above, and contains a time stamp of the saving date.|
-|-|
+**Note:** <br/> Only the directory can be specified, not the filename. The filename will be set by the application as described above, and contains a time stamp of the saving date.
 
 ### Configuring item: Speech Output
 When the item **Speech output** has been selected twice (as it is necessary because of double selection) the whole **Written text** will be read aloud by the operating system’s text-to-speech engine. 
@@ -605,8 +604,7 @@ For each item, you can specify the following parameters:
 
 Character sets of e.g. Asian languages and keyboard layouts must be installed before you can use them. You can add additional keyboard layouts by selecting **Language** from the operating system’s **Control Panel**. By clicking the button **Add a language**, you can add the desired language and keyboard layout.
 
-| **Note:** <br/> You probably have to install the desired keyboard layout before using the installation resources of your operating system.|
-|-|
+**Note:** <br/> You probably have to install the desired keyboard layout before using the installation resources of your operating system.
 
 To use the desired keyboard layout in Unicorn Speller, select one of the recently installed layouts listed in the **Input Method/Keyboard Layout (IME)** drop-down list.
 
