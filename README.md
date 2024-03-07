@@ -21,13 +21,13 @@ Unicorn Speller is a spelling system that uses the P300 complex. Numerous items 
 &nbsp;&nbsp;&nbsp;[Integrated Signal Quality Criteria](#Integrated-Signal-Quality-Criteria)<br/>
 [Calibrate Unicorn Speller](#Calibrate-Unicorn-Speller)<br/>
 [Write with Unicorn Speller](#Write-with-Unicorn-Speller)<br/>
-&nbsp;&nbsp;&nbsp;[Configuring item: Select completion suggestion](#Configuring-item:-Select-completion-suggestion)<br/>
-&nbsp;&nbsp;&nbsp;[Configuring item: Save](#Configuring-item:-Save)<br/>
-&nbsp;&nbsp;&nbsp;[Configuring item: Speech Output](#Configuring-item:-Speech-Output)<br/>
+&nbsp;&nbsp;&nbsp;[Configuring item: Select completion suggestion](#Configuring-item-Select-completion-suggestion)<br/>
+&nbsp;&nbsp;&nbsp;[Configuring item: Save](#configuring-item-save)<br/>
+&nbsp;&nbsp;&nbsp;[Configuring item: Speech Output](#Configuring-item-Speech-Output)<br/>
 [Specify the settings for flashing](#Specify-the-settings-for-flashing)<br/>
 [Specify the settings for item selection](#Specify-the-settings-for-item-selection)<br/>
-&nbsp;&nbsp;&nbsp;[Selection method: Standard](#Selection-method:-Standard)<br/>
-&nbsp;&nbsp;&nbsp;[Selection method: Dynamic](#Selection-method:-Dynamic)<br/>
+&nbsp;&nbsp;&nbsp;[Selection method: Standard](#Selection-method-Standard)<br/>
+&nbsp;&nbsp;&nbsp;[Selection method: Dynamic](#Selection-method-Dynamic)<br/>
 [Customizing the board and configuring the timing of flashing](#Customizing-the-board-and-configuring-the-timing-of-flashing)<br/>
 &nbsp;&nbsp;&nbsp;[Overall configuration of the board and timing](#Overall-configuration-of-the-board-and-timing)<br/>
 &nbsp;&nbsp;&nbsp;[Editing the content of the board](#Editing-the-content-of-the-board)<br/>
