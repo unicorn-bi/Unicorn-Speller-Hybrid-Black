@@ -666,8 +666,6 @@ Pre-installed dictionary files that were modified by enabled learning (or accide
 
 ### Creating custom dictionaries with the unicorn speller dictionary builder
 
-Unicorn Speller - Dictionary Builder 
-
 Custom Unicorn Speller dictionaries can be created by the user for different languages (and/or different contexts) with the Unicorn Speller Dictionary Builder application that is installed together with Unicorn Speller. It takes plain text files as input and builds a dictionary database based on the occurrences of contained word combinations. Thus, we recommend that you  select the text files used for input carefully. They should cover a wide range of words and word combinations, but should also be tailored to the context in which the dictionary will be used.
 
 **Note:** <br/> The better the training text files match the context in which the dictionary will be used, the better the prediction’s hit ratio will be. For example, texts from the 19th century would not provide good predictions if the user wants to write sentences in contemporary everyday language, just as a broad spectrum of scripts in everyday language might not be sufficient if communication targets a specific discipline.
