@@ -259,7 +259,7 @@ If your Unicorn Brain Interface is not listed in the drop-down menu but it is co
 
 **Attention:** <br/> If the **Data Acquisition Configuration** dialog states that an unrecommended Bluetooth adapter or no Bluetooth adapter is detected, please connect the recommended Bluetooth adapter that was shipped together with your Unicorn and disconnect all other Bluetooth adapters. Also, disable a possibly built-in Bluetooth adapter. Otherwise, the Unicorn might not work properly. Search again for connected Unicorns when the recommended Bluetooth adapter is connected.
 
-You can select a different Unicorn Brain Interface by selecting the desired serial number from the drop-down list. When a connection could be established, the **Connection State** indicator changes its state to Device found and reads the configuration of the Unicorn Brain Interface (see **Error! Reference source not found**.).
+You can select a different Unicorn Brain Interface by selecting the desired serial number from the drop-down list. When a connection could be established, the **Connection State** indicator changes its state to Device found and reads the configuration of the Unicorn Brain Interface.
 
 <p align="center">
 <img src="./img/Img7.png" alt="drawing" width="600"/><br/>
@@ -314,7 +314,7 @@ You can quickly check the signal quality by advising the user to perform some si
 <img src="./img/Img10.png" alt="drawing" width="800"/><br/>
 </p>
 
-3.	Advise the user to close his or her eyes and relax for several seconds. The EEG signal should show a rhythmic oscillation **Error! Reference source not found**. reflecting increased alpha activity.
+3.	Advise the user to close his or her eyes and relax for several seconds. The EEG signal should show a rhythmic oscillation. reflecting increased alpha activity.
 <p align="center">
 <img src="./img/Img11.png" alt="drawing" width="800"/><br/>
 </p>
@@ -540,7 +540,7 @@ The selection method to use can be altered after calibration and can be configur
 If the **Standard selection method** is selected, an item will only be selected when the **Maximum number of flashes** (see section [Specify the settings for flashing]()) for the current item has been reached, even if the collected data is not very meaningful (e.g. when the user didn’t focus on a specific item). Thus, the number of executed flashes per item is always the same and equals the specified **Maximum number of flashes**, even if fewer flashes might have been sufficient or more flashes would be necessary to reliably select the user’s target item.
 
 ### Selection method: Dynamic
-The **Dynamic** selection method attempts to select an item before the **Maximum number of flashes** (see section [Specify the settings for flashing](#specify-the-settings-for-flashing)) has been reached. In this case, the threshold of how different an item must be to be selected must be specified in percent. This **Certainty** must be configured before the selection method is used. Recommended values of this **Certainty** can be displayed by clicking the **Show recommended values** link in the settings dialog, as shown in the following figure Error! Reference source not found..
+The **Dynamic** selection method attempts to select an item before the **Maximum number of flashes** (see section [Specify the settings for flashing](#specify-the-settings-for-flashing)) has been reached. In this case, the threshold of how different an item must be to be selected must be specified in percent. This **Certainty** must be configured before the selection method is used. Recommended values of this **Certainty** can be displayed by clicking the **Show recommended values** link in the settings dialog, as shown in the following figure.
 
 <p align="center">
 <img src="./img/Img24.png" alt="drawing" width="700"/><br/>
@@ -665,11 +665,18 @@ Pre-installed dictionary files that were modified by enabled learning (or accide
 **Note:** <br/> Overwriting or deleting a modified pre-installed dictionary file results in loss of the modifications like new words or word combinations learned during usage (the original dictionary file can still be restored with the **Restore…** button). <br/> Overwriting or deleting a custom dictionary file results in complete loss of the dictionary. It’s the user’s responsibility to create backups of modified or custom dictionary files.
 
 ### Creating custom dictionaries with the unicorn speller dictionary builder
+
+Unicorn Speller - Dictionary Builder 
+
 Custom Unicorn Speller dictionaries can be created by the user for different languages (and/or different contexts) with the Unicorn Speller Dictionary Builder application that is installed together with Unicorn Speller. It takes plain text files as input and builds a dictionary database based on the occurrences of contained word combinations. Thus, we recommend that you  select the text files used for input carefully. They should cover a wide range of words and word combinations, but should also be tailored to the context in which the dictionary will be used.
 
 **Note:** <br/> The better the training text files match the context in which the dictionary will be used, the better the prediction’s hit ratio will be. For example, texts from the 19th century would not provide good predictions if the user wants to write sentences in contemporary everyday language, just as a broad spectrum of scripts in everyday language might not be sufficient if communication targets a specific discipline.
 
-Start the Unicorn Speller Dictionary Builder application by clicking the corresponding icon in the start menu. The application’s main window will show up as inError! Reference source not found..
+Start the Unicorn Speller Dictionary Builder application by clicking the corresponding icon in the start menu.
+
+<p align="center">
+<img src="./img/Img46.png" alt="drawing" width="700"/><br/>
+</p>
 
 <p align="center">
 <img src="./img/Img33.png" alt="drawing" width="700"/><br/>
@@ -714,18 +721,22 @@ Execute the following steps to test the connection:
 
 2. Install Unicorn Speller on the receiving PC. (Unicorn Speller itself is not needed, but the **Network Client** that comes with Unicorn Speller will be used for testing the connection).
 
-3. On the receiving PC, run the **Network Client** Error! Reference source not found.. 
+3. On the receiving PC, run the **Network Client** 
+    <p align="center">
+    <img src="./img/Img46.png" alt="drawing" width="800"/><br/>
+    </p>
+
     <p align="center"><img src="./img/Img36.png" alt="drawing" width="400"/><br/></p>
 
 4. In the **Network Client** window on the receiving PC, enter the IP address of the receiving PC and the port where you want to receive the network output from. In the example, we assumed this IP address is ```192.168.100.162``` and port ```10```. Then, click the **Start** button.
     **Attention:** <br/> Ensure that the firewall on the receiving PC allows incoming connections on the specified port from Unicorn Speller on the sending PC (the sending PC’s IP address might be displayed).
 
-    The **Network Client** starts listening on the specified network port now and may look like the following figure Error! Reference source not found.:
+    The **Network Client** starts listening on the specified network port now and may look like the following figure:
     <p align="center"><img src="./img/Img37.png" alt="drawing" width="400"/><br/></p>
 
 5. In the **Network Output Settings** dialog of Unicorn Speller on the sending PC, enter the IP address of the receiving PC and the ports to which the data should be sent from the sending PC and received from the receiving PC (if disabled, check the **Send selected items over network broadcast** checkbox first). The receiving PC must be listening to the same port, and the IP address is usually the same too.
 
-6. Check the checkbox **Use external receiver** in the **Network Output Settings** dialog of Unicorn Speller on the sending PC, set the **Timeout** to 1 second and click the **Send Item…** button. A test item with the specified name will be generated and sent to the specified destination address. The dialog might look like in the following figureError! Reference source not found.
+6. Check the checkbox **Use external receiver** in the **Network Output Settings** dialog of Unicorn Speller on the sending PC, set the **Timeout** to 1 second and click the **Send Item…** button. A test item with the specified name will be generated and sent to the specified destination address. The dialog might look like in the following figure.
 
     **Attention:** <br/> Ensure that the firewall on the sending PC allows outgoing connections from Unicorn Speller to the specified destination IP address and port.
 
